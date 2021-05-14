@@ -6,9 +6,19 @@ METABASE_VERSION=`cat ./bin/version`
 METABASE_DIR="$1/target/uberjar"
 METABASE_JAR="$METABASE_DIR/metabase.jar"
 METABASE_URL="https://downloads.metabase.com/v$METABASE_VERSION/metabase.jar"
+DRIVER_DIR="$METABASE_DIR/plugins/"
+DRIVER_JAR="$DRIVER_DIR/bigquery-alt.metabase-driver.jar"
+DRIVER_URL="https://github.com/MarkMacArdle/metabase-bigquery/releases/download/v0.39/bigquery-alt.metabase-driver.jar"
 
 mkdir -p $METABASE_DIR
 
 echo -n "-----> Downloading Metabase... from $METABASE_URL to $METABASE_JAR"
 curl -s --retry 3 -o $METABASE_JAR -L $METABASE_URL
+echo "done"
+
+
+mkdir -p $DRIVER_DIR
+
+echo -n "-----> Downloading BigQuery community driver... from $DRIVER_URL to $DRIVER_JAR"
+curl -s --retry 3 -o $DRIVER_JAR -L $DRIVER_URL
 echo "done"
