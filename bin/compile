@@ -8,7 +8,7 @@ METABASE_JAR="$METABASE_DIR/metabase.jar"
 METABASE_URL="https://downloads.metabase.com/v$METABASE_VERSION/metabase.jar"
 DRIVER_DIR="$1/plugins/"
 DRIVER_JAR="$DRIVER_DIR/bigquery-alt.metabase-driver.jar"
-DRIVER_URL="https://github.com/MarkMacArdle/metabase-bigquery/releases/download/v0.39/bigquery-alt.metabase-driver.jar"
+DRIVER_URL="https://github.com/MarkMacArdle/metabase-bigquery/releases/download/v0.39.0.1/bigquery-alt.metabase-driver.jar"
 
 mkdir -p $METABASE_DIR
 
